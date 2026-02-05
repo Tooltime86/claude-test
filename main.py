@@ -2,10 +2,11 @@
 """
 Pwnagotchi name support - A simple script for managing Pwnagotchi device names
 """
+import os
 
 def get_pwnagotchi_name():
-    """Get the pwnagotchi device name"""
-    return "jay felony"
+    """Get the pwnagotchi device name from environment or use default"""
+    return os.environ.get('PWNAGOTCHI_NAME', 'jay felony')
 
 def main():
     """Main function to display pwnagotchi greeting"""
