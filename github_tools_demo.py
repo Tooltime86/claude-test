@@ -173,7 +173,9 @@ def demonstrate_mcp_usage():
     print("\n4️⃣ Reading a file...")
     content = client.read_file("example-user", "example-repo", "README.md")
     if content:
-        print(f"   Content preview: {content[:50]}...")
+        preview = content[:50]
+        ellipsis = "..." if len(content) > 50 else ""
+        print(f"   Content preview: {preview}{ellipsis}")
     
     # Create a file
     print("\n5️⃣ Creating a new file...")
